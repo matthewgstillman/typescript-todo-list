@@ -5,6 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 interface Props {
   todos: Todo[];
   toggleTodo: ToggleTodo;
+  //   deleteTodo: DeleteTodo;
 }
 
 export const TodoList: FC<Props> = ({ todos, toggleTodo }) => {
@@ -12,7 +13,13 @@ export const TodoList: FC<Props> = ({ todos, toggleTodo }) => {
     <ul>
       {todos.map((todo) => (
         <ListGroup.Item>
-          <TodoListItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
+          <TodoListItem
+            key={todo.text}
+            todo={todo}
+            // index={index}
+            toggleTodo={toggleTodo}
+            // deleteTodo={deleteTodo}
+          />
         </ListGroup.Item>
       ))}
     </ul>

@@ -4,6 +4,7 @@ import { AddTodoForm } from "./AddTodoForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
+import "./App.css";
 
 const initialTodos: Todo[] = [
   {
@@ -32,15 +33,25 @@ function App() {
     setTodos(newTodos);
   };
 
+  // const deleteTodo = (index: number) => {
+  //   const newTodos = [...todos];
+  //   newTodos.splice(index, 1);
+  //   setTodos(newTodos);
+  // };
+
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text, complete: false };
     setTodos([...todos, newTodo]);
   };
 
   return (
-    <div>
+    <div className="app">
       <Container fluid>
-        <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+          // deleteTodo={deleteTodo}
+        />
         <AddTodoForm addTodo={addTodo} />
       </Container>
     </div>
