@@ -13,7 +13,7 @@ const initialTodos: Todo[] = [
   },
   {
     text: "Write app",
-    complete: true,
+    complete: false,
   },
 ];
 
@@ -21,6 +21,8 @@ function App() {
   const [todos, setTodos] = useState(initialTodos);
 
   const toggleTodo = (selectedTodo: Todo) => {
+    const toDoIndex = todos.indexOf(selectedTodo);
+    console.log(`To Do Index of ${selectedTodo} is ${toDoIndex}`);
     const newTodos = todos.map((todo) => {
       if (todo == selectedTodo) {
         return {
@@ -33,11 +35,12 @@ function App() {
     setTodos(newTodos);
   };
 
-  // const deleteTodo = (index: number) => {
-  //   const newTodos = [...todos];
-  //   newTodos.splice(index, 1);
-  //   setTodos(newTodos);
-  // };
+  const deleteTodo = (selectedTodo: Todo) => {
+    const toDoIndex = todos.indexOf(selectedTodo);
+    const newTodos = [...todos];
+    newTodos.splice(toDoIndex, 1);
+    setTodos(newTodos);
+  };
 
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text, complete: false };

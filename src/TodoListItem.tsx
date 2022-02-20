@@ -42,7 +42,7 @@ export const TodoListItem: FC<Props> = ({
       <Button
         className="listButtons"
         variant="warning"
-        // onClick={() => deleteTodo(index)}
+        // onClick={() => deleteTodo(todo)}
       >
         Remove
       </Button>

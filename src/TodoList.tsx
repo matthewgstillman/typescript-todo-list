@@ -16,7 +16,6 @@ export const TodoList: FC<Props> = ({ todos, toggleTodo }) => {
           <TodoListItem
             key={todo.text}
             todo={todo}
-            // index={index}
             toggleTodo={toggleTodo}
             // deleteTodo={deleteTodo}
           />
