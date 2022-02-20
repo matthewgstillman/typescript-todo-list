@@ -3,16 +3,15 @@ import Button from "react-bootstrap/Button";
 
 interface Props {
   todo: Todo;
-  //   index: DeleteTodo;
   toggleTodo: ToggleTodo;
-  //   deleteTodo: DeleteTodo;
+  deleteTodo: DeleteTodo;
 }
 
 export const TodoListItem: FC<Props> = ({
   todo,
   //   index,
   toggleTodo,
-  //   deleteTodo,
+  deleteTodo,
 }) => {
   return (
     <div className="todo">
@@ -42,7 +41,7 @@ export const TodoListItem: FC<Props> = ({
       <Button
         className="listButtons"
         variant="warning"
-        // onClick={() => deleteTodo(todo)}
+        onClick={() => deleteTodo(todo)}
       >
         Remove
       </Button>
