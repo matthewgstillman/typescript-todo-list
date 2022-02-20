@@ -17,12 +17,19 @@ const initialTodos: Todo[] = [
   },
 ];
 
+const completedTasks: CompletedTodo[] = [
+  {
+    text: "Finish my project",
+  },
+];
+
 function App() {
   const [todos, setTodos] = useState(initialTodos);
 
+  const [completedTodos, setCompletedTodos] = useState(completedTasks);
+
   const toggleTodo = (selectedTodo: Todo) => {
     const toDoIndex = todos.indexOf(selectedTodo);
-    console.log(`To Do Index of ${selectedTodo} is ${toDoIndex}`);
     const newTodos = todos.map((todo) => {
       if (todo == selectedTodo) {
         return {
@@ -39,12 +46,21 @@ function App() {
     const toDoIndex = todos.indexOf(selectedTodo);
     const newTodos = [...todos];
     newTodos.splice(toDoIndex, 1);
+    //Tried changing the order of the next two lines to see whether that fixed it
+    // addToCompletedTodoList({ text: selectedTodo.text });
+    addToCompletedTodoList(selectedTodo);
     setTodos(newTodos);
   };
 
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text, complete: false };
     setTodos([...todos, newTodo]);
+  };
+
+  const addToCompletedTodoList = (selectedTodo: CompletedTodo) => {
+    const completedTodoListItems = [...completedTodos];
+    setCompletedTodos([...completedTodoListItems, { text: selectedTodo.text }]);
+    console.log(completedTodos);
   };
 
   return (
@@ -56,6 +72,11 @@ function App() {
           deleteTodo={deleteTodo}
         />
         <AddTodoForm addTodo={addTodo} />
+        <br />
+        <h1 className="header">Completed Todos</h1>
+        {completedTodos.map((completed) => {
+          <h4>{completed.text}</h4>;
+        })}
       </Container>
     </div>
   );

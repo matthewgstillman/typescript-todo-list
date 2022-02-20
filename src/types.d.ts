@@ -3,6 +3,10 @@ interface Todo {
   complete: boolean;
 }
 
+interface CompletedTodo {
+  text: string;
+}
+
 type ToggleTodo = (selectedTodo: Todo) => void;
 
 type AddTodo = (text: string) => void;

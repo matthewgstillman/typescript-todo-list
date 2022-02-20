@@ -14,37 +14,31 @@ export const TodoListItem: FC<Props> = ({
   deleteTodo,
 }) => {
   return (
-    <div className="todo">
-      <label
-        style={{ textDecoration: todo.complete ? "line-through" : undefined }}
-      >
-        <input
-          type="checkbox"
-          checked={todo.complete}
-          onClick={() => {
-            toggleTodo(todo);
-          }}
-        />
-        {todo.text}
-      </label>
-      {todo.complete !== true ? (
+    <div
+      className="todo"
+      style={{ textDecoration: todo.complete ? "line-through" : "" }}
+    >
+      {todo.text}
+      <div>
+        {todo.complete !== true ? (
+          <Button
+            className="listButtons"
+            variant="success"
+            onClick={() => toggleTodo(todo)}
+          >
+            Complete
+          </Button>
+        ) : (
+          <></>
+        )}
         <Button
           className="listButtons"
-          variant="success"
-          onClick={() => toggleTodo(todo)}
+          variant="warning"
+          onClick={() => deleteTodo(todo)}
         >
-          Complete
+          Remove
         </Button>
-      ) : (
-        <></>
-      )}
-      <Button
-        className="listButtons"
-        variant="warning"
-        onClick={() => deleteTodo(todo)}
-      >
-        Remove
-      </Button>
+      </div>
     </div>
   );
 };

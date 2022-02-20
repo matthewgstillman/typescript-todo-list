@@ -10,7 +10,8 @@ interface Props {
 
 export const TodoList: FC<Props> = ({ todos, toggleTodo, deleteTodo }) => {
   return (
-    <ul>
+    <div>
+      <h1 className="header">To Do List</h1>
       {todos.map((todo) => (
         <ListGroup.Item>
           <TodoListItem
@@ -21,6 +22,6 @@ export const TodoList: FC<Props> = ({ todos, toggleTodo, deleteTodo }) => {
           />
         </ListGroup.Item>
       ))}
-    </ul>
+    </div>
   );
 };
