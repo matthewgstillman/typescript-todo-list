@@ -73,7 +73,6 @@ function App() {
         />
         <AddTodoForm addTodo={addTodo} />
         <br />
-        <h1 className="header">Completed Todos</h1>
         {completedTodos.map((completed) => {
           <h4>{completed.text}</h4>;
         })}
