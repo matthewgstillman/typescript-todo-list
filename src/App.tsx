@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { TodoList } from "./TodoList";
-import { AddTodoForm } from "./AddTodoForm";
+import { TodoList } from "./components/TodoList";
+import { AddTodoForm } from "./components/TodoForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -12,7 +12,7 @@ const initialTodos: Todo[] = [
     complete: false,
   },
   {
-    text: "Write app",
+    text: "Eat my dinner",
     complete: false,
   },
 ];
