@@ -2,19 +2,26 @@ import React, { useState, FC } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-interface Props {
+export interface AddTodoProps {
   addTodo: AddTodo;
 }
 
-export const AddTodoForm: FC<Props> = ({ addTodo }) => {
+export const AddTodoForm: FC<AddTodoProps> = ({ addTodo }) => {
   const [text, setText] = useState("");
   return (
     <div>
       <br />
-      <h1 className="header">Add New To Do Item</h1>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+      <h1 className="header" datatest-id="addTodoHeader">
+        Add New To Do Item
+      </h1>
+      <Form datatest-id="addTodoForm">
+        <Form.Group
+          className="mb-3"
+          controlId="formBasicEmail"
+          data-testid="firstHeader"
+        >
           <Form.Control
+            data-testid="todoForm"
             type="text"
             value={text}
             placeholder="Add Todo"

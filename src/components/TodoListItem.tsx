@@ -1,15 +1,14 @@
 import React, { useState, FC } from "react";
 import Button from "react-bootstrap/Button";
 
-interface Props {
+export interface TodoListItemProps {
   todo: Todo;
   toggleTodo: ToggleTodo;
   deleteTodo: DeleteTodo;
 }
 
-export const TodoListItem: FC<Props> = ({
+export const TodoListItem: FC<TodoListItemProps> = ({
   todo,
-  //   index,
   toggleTodo,
   deleteTodo,
 }) => {
