@@ -1,11 +1,12 @@
 .app {
-  background: #143d59;
+  background: #ffffff;
+  background-image: linear-gradient(#6dd5ed, #2193b0);
   height: 100vh;
   padding: 30px;
 }
 
 .header {
-  color: #f4b41a;
+  color: #130303;
   margin-top: 50px;
   padding-top: 10px;
   font-weight: 300;
@@ -16,6 +17,10 @@
   border: 3px solid black;
   margin: 2px;
   float: right;
+}
+
+.list-group-item{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .myForm {
@@ -42,10 +47,15 @@
   margin-bottom: 6px;
   padding: 3px 10px;
   border-radius: 8px;
-  /* max-width: 50%; */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .todo-form {
   align-items: center;
   border: 1 px solid black;
 }
+
+.form-control{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
