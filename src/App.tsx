@@ -46,8 +46,6 @@ function App() {
     const toDoIndex = todos.indexOf(selectedTodo);
     const newTodos = [...todos];
     newTodos.splice(toDoIndex, 1);
-    //Tried changing the order of the next two lines to see whether that fixed it
-    // addToCompletedTodoList({ text: selectedTodo.text });
     addToCompletedTodoList(selectedTodo);
     setTodos(newTodos);
   };
