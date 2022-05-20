@@ -31,7 +31,7 @@ function App() {
   const toggleTodo = (selectedTodo: Todo) => {
     const toDoIndex = todos.indexOf(selectedTodo);
     const newTodos = todos.map((todo) => {
-      if (todo == selectedTodo) {
+      if (todo === selectedTodo) {
         return {
           ...todo,
           complete: !todo.complete,
